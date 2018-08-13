@@ -1,0 +1,63 @@
+ext {
+    android = [
+            compileSdkVersion: 27,
+            applicationId    : "com.example.mtestmvp",
+            minSdkVersion    : 14,
+            targetSdkVersion : 27,
+            versionCode      : 1,
+            versionName      : "1.0.0",
+    ]
+
+    dependencies = [
+            // 单元测试
+            junit                 : 'junit:junit:4.12',
+            test_runner           : 'com.android.support.test:runner:1.0.2',
+            test_espresso         : 'com.android.support.test.espresso:espresso-core:3.0.2',
+
+            // v4 v7
+            support_v4            : 'com.android.support:support-v4:27+',
+            support_v7            : 'com.android.support:appcompat-v7:27+',
+
+            // annotaations
+            annotaations          : 'com.android.support:support-annotations:27+',
+
+            // recyclerview
+            recyclerview          : 'com.android.support:recyclerview-v7:27+',
+
+            // design包
+            design                : 'com.android.support:design:27+',
+
+            // Gson
+            gson                  : 'com.google.code.gson:gson:2.8.5',
+
+            // okhttp
+            okhttp                : 'com.squareup.okhttp3:okhttp:3.11.0',
+            okhttplog             : 'com.squareup.okhttp3:logging-interceptor:3.11.0',
+
+            // retrofit
+            retrofit              : 'com.squareup.retrofit2:retrofit:2.4.0',
+            converter_gson        : 'com.squareup.retrofit2:converter-gson:2.4.0',
+            rxjava_adapter        : 'com.squareup.retrofit2:adapter-rxjava2:2.4.0',
+
+            // rxjava
+
+            rxjava                : 'io.reactivex.rxjava2:rxjava:2.2.0',
+            rxandroid             : 'io.reactivex.rxjava2:rxandroid:2.0.2',
+            rxlifecycle           : 'com.trello.rxlifecycle2:rxlifecycle:2.2.2',
+            rxlifecycle_android   : 'com.trello.rxlifecycle2:rxlifecycle-android:2.2.2',
+            rxlefecycle_components: 'com.trello.rxlifecycle2:rxlifecycle-components:2.2.2',
+
+            // walle渠道包打包
+            walle                 : 'com.meituan.android.walle:library:1.1.6',
+
+            // 数据库 https://github.com/greenrobot/greenDAO
+            greendao              : 'org.greenrobot:greendao:3.2.2',
+
+            butterknife           : 'com.jakewharton:butterknife:8.8.1',
+            butterknife_compiler  : 'com.jakewharton:butterknife-compiler:8.8.1',
+
+            logger                : 'com.orhanobut:logger:2.2.0',
+
+            bottom_navigation_bar : 'com.ashokvarma.android:bottom-navigation-bar:2.0.4'
+    ]
+}

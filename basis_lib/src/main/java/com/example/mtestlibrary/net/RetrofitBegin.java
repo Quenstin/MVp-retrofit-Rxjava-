@@ -1,10 +1,16 @@
 package com.example.mtestlibrary.net;
 
 import com.example.mtestlibrary.api.ApiServer;
+import com.example.mtestlibrary.cookie.AddCookiesInterceptor;
+import com.example.mtestlibrary.cookie.ReceivedCookiesInterceptor;
+import com.example.mtestlibrary.interceptor.HeaderInterceptor;
+import com.example.mtestlibrary.interceptor.HttpLogger;
+import com.example.mtestlibrary.interceptor.TokenInterceptor;
 
 import java.util.concurrent.TimeUnit;
 
 import okhttp3.OkHttpClient;
+import okhttp3.logging.HttpLoggingInterceptor;
 import retrofit2.Retrofit;
 import retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory;
 import retrofit2.converter.gson.GsonConverterFactory;
@@ -24,11 +30,20 @@ public class RetrofitBegin {
 
     private RetrofitBegin() {
 
+
+        HttpLoggingInterceptor httpLoggingInterceptor=new HttpLoggingInterceptor(new HttpLogger());
+        httpLoggingInterceptor.setLevel(HttpLoggingInterceptor.Level.BODY);
+
+
         OkHttpClient mClient = new OkHttpClient.Builder()
+                .addInterceptor(httpLoggingInterceptor)
+                .addInterceptor(new HeaderInterceptor())
+                .addInterceptor(new TokenInterceptor())
                 .connectTimeout(600, TimeUnit.SECONDS)
                 .readTimeout(600, TimeUnit.SECONDS)
                 .writeTimeout(600, TimeUnit.SECONDS)
-//根据服务器 增加cookie 和请求头
+                .addInterceptor(new ReceivedCookiesInterceptor())
+                .addInterceptor(new AddCookiesInterceptor())
                 .build();
         mRetrofit = new Retrofit.Builder()
                 .baseUrl(ApiServer.BASEDAPIOMAIN)

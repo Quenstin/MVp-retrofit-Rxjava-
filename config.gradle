@@ -37,7 +37,8 @@ ext {
             // retrofit
             retrofit              : 'com.squareup.retrofit2:retrofit:2.4.0',
             converter_gson        : 'com.squareup.retrofit2:converter-gson:2.4.0',
-            rxjava_adapter        : 'com.squareup.retrofit2:adapter-rxjava2:2.4.0',
+            rxjava_adapter        : 'com.squareup.retrofit2:adapter-rxjava2:2.2.0',
+
 
             // rxjava
 

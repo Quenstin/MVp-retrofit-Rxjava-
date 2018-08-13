@@ -4,7 +4,7 @@ import android.widget.TextView;
 
 import com.example.home_lib.R;
 import com.example.home_lib.contract.HttpContract;
-import com.example.home_lib.model.TestHttpBean;
+import com.example.home_lib.model.PrenBean;
 import com.example.home_lib.presenter.HttpPresenterIm;
 import com.example.mtestlibrary.base.BaseActivity;
 import com.example.mtestlibrary.base.BasePresenter;
@@ -43,8 +43,8 @@ public class HttpActivity extends BaseActivity implements HttpContract.HttpView 
     }
 
     @Override
-    public void showData(TestHttpBean bean) {
-        txt_http.setText(bean.remarks+bean.returnReason+bean.returnStatus+"");
+    public void showData(PrenBean bean) {
+        txt_http.setText(bean.vlog+"ccc");
 
 
     }

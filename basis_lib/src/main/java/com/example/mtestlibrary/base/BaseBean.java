@@ -6,8 +6,10 @@ package com.example.mtestlibrary.base;
  * zhuguoqing
  * 作用:
  */
-public class BaseBean {
-    public boolean result;
-    public String message;
-    public int code = -1;
+public class BaseBean<T> {
+    public String remarks;
+    public T returnInformation;
+    public String returnReason;
+    public int returnStatus;
+    public int returnTotal;
 }

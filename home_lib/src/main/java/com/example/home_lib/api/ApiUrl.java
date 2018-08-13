@@ -1,9 +1,11 @@
 package com.example.home_lib.api;
 
 import com.example.home_lib.model.AppUpdateBean;
+import com.example.home_lib.model.PrenBean;
 import com.example.home_lib.model.TestBean;
 import com.example.home_lib.model.TestHttpBean;
 import com.example.mtestlibrary.api.ApiServer;
+import com.example.mtestlibrary.base.BaseBean;
 
 import io.reactivex.Observable;
 import retrofit2.http.GET;
@@ -23,5 +25,5 @@ public interface ApiUrl {
     Observable<AppUpdateBean> getUpLoadApp(@Path("version_code") int version_code);
 
     @GET(ApiServer.APP_TEST)
-    Observable<TestHttpBean> getTest();
+    Observable<BaseBean<PrenBean>> getTest();
 }

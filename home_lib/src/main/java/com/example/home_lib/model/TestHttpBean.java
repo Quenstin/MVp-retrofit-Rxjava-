@@ -6,9 +6,9 @@ package com.example.home_lib.model;
  * zhuguoqing
  * 作用:
  */
-public class TestHttpBean {
+public class TestHttpBean<T> {
     public String remarks;
-    public PrenBean returnInformation;
+    public T returnInformation;
     public String returnReason;
     public int returnStatus;
     public int returnTotal;

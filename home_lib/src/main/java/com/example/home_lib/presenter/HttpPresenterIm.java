@@ -1,14 +1,18 @@
 package com.example.home_lib.presenter;
 
+
+import android.util.Log;
+
 import com.example.home_lib.api.ApiUrl;
 import com.example.home_lib.contract.HttpContract;
+import com.example.home_lib.model.PrenBean;
 import com.example.home_lib.model.TestHttpBean;
+import com.example.mtestlibrary.base.BaseBean;
 import com.example.mtestlibrary.net.RetrofitBegin;
+import com.example.mtestlibrary.rx.BaseObserver;
+import com.google.gson.Gson;
 
-import io.reactivex.Observer;
 import io.reactivex.android.schedulers.AndroidSchedulers;
-import io.reactivex.disposables.Disposable;
-import io.reactivex.functions.Consumer;
 import io.reactivex.schedulers.Schedulers;
 
 /**
@@ -30,26 +34,18 @@ public class HttpPresenterIm implements HttpContract.HttpPresenter {
         RetrofitBegin.getInstence().create(ApiUrl.class).getTest()
                 .subscribeOn(Schedulers.newThread())
                 .observeOn(AndroidSchedulers.mainThread())
-                .subscribe(new Observer<TestHttpBean>() {
+                .subscribe(new BaseObserver<PrenBean>() {
                     @Override
-                    public void onSubscribe(Disposable d) {
+                    protected void onSuccees(BaseBean<PrenBean> t) throws Exception {
+                        Gson gson=new Gson();
+                        String s=gson.toJson(t);
+                        Log.d("cccc",s);
+                       view.showData(t.returnInformation);
 
                     }
 
                     @Override
-                    public void onNext(TestHttpBean bean) {
-                        view.showData(bean);
-
-                    }
-
-                    @Override
-                    public void onError(Throwable e) {
-                        view.showErorr(e.getMessage()+e.getLocalizedMessage());
-
-                    }
-
-                    @Override
-                    public void onComplete() {
+                    protected void onFailure(Throwable e, boolean isNetWorkError) throws Exception {
 
                     }
                 });

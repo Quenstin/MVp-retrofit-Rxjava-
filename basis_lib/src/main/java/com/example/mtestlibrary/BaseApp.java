@@ -1,6 +1,7 @@
 package com.example.mtestlibrary;
 
 import android.app.Application;
+import android.content.Context;
 import android.util.Log;
 
 /**
@@ -10,9 +11,16 @@ import android.util.Log;
  * 作用:
  */
 public class BaseApp extends Application {
+    private static Context mContext;
+
     @Override
     public void onCreate() {
         super.onCreate();
+        mContext=this;
         Log.d("cccc", "hello");
     }
+    public static Context getContext(){
+        return mContext;
+    }
+
 }

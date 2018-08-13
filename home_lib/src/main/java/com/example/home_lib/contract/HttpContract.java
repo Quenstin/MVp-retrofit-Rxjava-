@@ -1,6 +1,6 @@
 package com.example.home_lib.contract;
 
-import com.example.home_lib.model.TestHttpBean;
+import com.example.home_lib.model.PrenBean;
 import com.example.mtestlibrary.base.BasePresenter;
 import com.example.mtestlibrary.base.BaseView;
 
@@ -13,7 +13,7 @@ import com.example.mtestlibrary.base.BaseView;
 public interface HttpContract {
 
     interface HttpView extends BaseView<HttpPresenter>{
-        void showData(TestHttpBean bean);
+        void showData(PrenBean bean);
 
     }
     interface HttpPresenter extends BasePresenter{

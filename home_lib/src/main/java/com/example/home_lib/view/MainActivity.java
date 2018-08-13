@@ -77,7 +77,7 @@ public class MainActivity extends BaseActivity implements MainContract.View {
 
     @Override
     public void showData(AppUpdateBean bean) {
-        bt_ok.setText(bean.message);
+//        bt_ok.setText(bean.message);
         txt_content.setText("查询时间:"+bean.data.date+"\n"+"    系统:"
                 +bean.data.system+"    当前版本"+bean.data.version+"   url"+bean.data.updateUrl);
     }

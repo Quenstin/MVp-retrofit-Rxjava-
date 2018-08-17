@@ -13,6 +13,6 @@ import okhttp3.logging.HttpLoggingInterceptor;
 public class HttpLogger implements HttpLoggingInterceptor.Logger {
     @Override
     public void log(String message) {
-        Log.d("ccc", message);
+        Log.d("HttpLogger------", message);
     }
 }

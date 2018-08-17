@@ -37,4 +37,5 @@ android {
 
 dependencies {
     implementation project(':basis_lib')
+    implementation 'com.github.forvv231:EasyNavigition:0.9.4'
 }

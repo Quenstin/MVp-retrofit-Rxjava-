@@ -4,7 +4,10 @@ package com.example.home_lib.presenter;
 import com.example.home_lib.api.ApiUrl;
 import com.example.home_lib.contract.MainContract;
 import com.example.home_lib.model.AppUpdateBean;
+import com.example.mtestlibrary.base.BaseBean;
 import com.example.mtestlibrary.net.RetrofitBegin;
+import com.example.mtestlibrary.rx.BaseObserver;
+import com.example.mtestlibrary.rx.RxSchedulers;
 
 import io.reactivex.Observer;
 import io.reactivex.android.schedulers.AndroidSchedulers;
@@ -29,32 +32,19 @@ public class MainPresenter implements MainContract.Presenter {
     public void loadUserInfo(int code) {
         view.loadingStar();
         RetrofitBegin.getInstence().create(ApiUrl.class).getUpLoadApp(code)
-                .subscribeOn(Schedulers.newThread())
-                .observeOn(AndroidSchedulers.mainThread())
-                .subscribe(new Observer<AppUpdateBean>() {
+                .compose(RxSchedulers.<BaseBean<AppUpdateBean>>compose())
+                .subscribe(new BaseObserver<AppUpdateBean>() {
                     @Override
-                    public void onSubscribe(Disposable d) {
+                    protected void onSuccees(BaseBean<AppUpdateBean> t) throws Exception {
 
                     }
 
                     @Override
-                    public void onNext(AppUpdateBean testBean) {
-                        view.loadingDismiss();
-                        view.showData(testBean);
-
-                    }
-
-                    @Override
-                    public void onError(Throwable e) {
-                        view.showErorr(e.getMessage());
-
-                    }
-
-                    @Override
-                    public void onComplete() {
+                    protected void onFailure(Throwable e) throws Exception {
 
                     }
                 });
+
 
     }
 

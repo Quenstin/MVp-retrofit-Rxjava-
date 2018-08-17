@@ -4,7 +4,7 @@
 
     <application android:theme="@style/AppTheme">
 
-        <activity android:name=".view.HttpActivity">
+        <activity android:name=".view.activity.HttpActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
                 <category android:name="android.intent.category.LAUNCHER"/>

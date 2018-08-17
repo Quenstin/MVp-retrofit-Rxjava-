@@ -2,8 +2,8 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    >
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical">
 
     <Button
         android:id="@+id/bt_ok"
@@ -14,6 +14,18 @@
         android:id="@+id/txt_content"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
+
+    <com.next.easynavigition.view.EasyNavigitionBar
+        android:id="@+id/enb_bar"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:Easy_addIconSize="40dp"
+        app:Easy_navigitionHeight="50dp"
+        app:Easy_addLayoutHeight="80dp"
+        app:Easy_addIconRule="RULE_CENTER"
+        >
+
+    </com.next.easynavigition.view.EasyNavigitionBar>
 
 
 

@@ -1,4 +1,4 @@
-package com.example.home_lib.view;
+package com.example.home_lib.view.activity;
 
 import android.widget.TextView;
 
@@ -8,6 +8,9 @@ import com.example.home_lib.model.PrenBean;
 import com.example.home_lib.presenter.HttpPresenterIm;
 import com.example.mtestlibrary.base.BaseActivity;
 import com.example.mtestlibrary.base.BasePresenter;
+import com.example.mtestlibrary.utils.SPUtil;
+import com.orhanobut.logger.Logger;
+
 
 /**
  * HttpActivity
@@ -34,6 +37,9 @@ public class HttpActivity extends BaseActivity implements HttpContract.HttpView 
     public void initData() {
         httpPresenterIm=new HttpPresenterIm(this);
         httpPresenterIm.loadHttpInfo();
+
+        Logger.d("HttpActivity"+SPUtil.getString(this,"COOKIES"));
+
 
     }
 

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:titlebar="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center"
+    android:layout_weight="1"
+    android:gravity="center">
+
+    <ezy.ui.view.BadgeButton
+        android:id="@+id/bt_test"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:drawableTop="@mipmap/ic_launcher"
+        android:padding="15dp"
+        android:gravity="center"
+        android:text="待报价"
+        titlebar:btnBadgeText="800"
+        titlebar:btnBadgeVisible="true"
+
+        />
+
+</LinearLayout>
